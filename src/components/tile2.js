@@ -3,13 +3,10 @@ import {Alert,Card,CardImg,CardImgOverlay,CardText,CardBody,CardTitle, Button, C
 import { Link } from 'react-router-dom';
 import Carousel from "react-elastic-carousel";
 import {withGetScreen} from 'react-getscreen'
-import OutsideClickHandler from 'react-outsideclickhandler';
 import image from "../assets/placehold.jpeg"
 import GridLayout from 'react-grid-layout';
 
-
-
-class Menu extends Component{
+class Menu2 extends Component{
   
 
   constructor(props){
@@ -125,25 +122,22 @@ renderTile(detail){
 
 else{
   
-    if (i<4){
+    if (i>=4&&i<8){
       return (  
         <Col className="col-3 center" style={{marginBottom:"20px"}}>
         <div>
         <Col className="col-12 center" style={{marginBottom:"20px"}}>
-        
-      
           <Card key={detail.id} onClick={() => this.onTileSelect(detail)}>
           <Card  onClick={this.close}>
-          
+        
           <CardImg src={image}/>
           <CardImgOverlay>
             <CardTitle className="font-weight-bolder">{detail.name}</CardTitle>
           </CardImgOverlay>
-         
+        
           </Card> 
         
         </Card>
-       
         </Col>
     </div>
     </Col>
@@ -191,4 +185,4 @@ else{
     }
   
 
-      export default withGetScreen(Menu);
+      export default withGetScreen(Menu2);
