@@ -41,7 +41,10 @@ class App extends Component{
       <div className="App">
         <Header/>
         <div >
-          <Main/>
+          <Tiles open={this.state.open} close={this.close} id={0} details={this.state.details.slice(0,4)}/>
+          <Tiles open={this.state.open} close={this.close} id={1}  details={this.state.details.slice(4,8)}/>
+          <Tiles open={this.state.open} close={this.close} id={2}  details={this.state.details.slice(8,12)}/>
+          <Tiles open={this.state.open} close={this.close} id={3}  details={this.state.details.slice(12,18)}/>
         </div>
       </div>
     );
