@@ -16,7 +16,7 @@ class Main extends Component{
     this.close=this.close.bind(this);
   }
 
-  close(id){
+  close=(id)=>{
     let newOpen = this.state.open;
     this.state.open.forEach((current, index) => {
       console.log(index, id);
@@ -31,9 +31,9 @@ class Main extends Component{
   }
 
   render() {
-    let content = [];
+    var content = [];
     //To push the image to the next row automatically.
-    this.props.details.forEach((detail, i) =>{   //TypeError: Cannot read property 'forEach' of undefined
+    this.state.details.forEach((detail, i) =>{   //TypeError: Cannot read property 'forEach' of undefined
       if((i+1) % 4 == 0){
         content.push(
           <div className="row" key={detail.id}>       

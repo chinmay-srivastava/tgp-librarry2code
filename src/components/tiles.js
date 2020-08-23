@@ -2,6 +2,7 @@ import React, {Component,useState} from 'react';
 import {Alert,Card,CardImg,CardImgOverlay,CardText,CardBody,CardTitle, Button, Collapse,Row,Col,Container } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Carousel from "react-elastic-carousel";
+import {DETAILS}  from '../shared/details'
 import {withGetScreen} from 'react-getscreen'
 import OutsideClickHandler from 'react-outsideclickhandler';
 import image from "../assets/placehold.jpeg"
@@ -14,6 +15,7 @@ class Menu extends Component{
     super(props);
     this.state = {
       selectedTile:null,
+      details:DETAILS
       // open:false
     }
     // this.close=this.close.bind(this);
@@ -65,7 +67,8 @@ class Menu extends Component{
   }
 
   render() {
-    const menu = this.props.details.map((detail,i)=> {
+    
+    const menu = this.props.details.map(detail=> {
       if (this.props.isMobile()){
         return (
           <Col className="col-12 center" style={{marginBottom:"20px"}}>
@@ -76,7 +79,7 @@ class Menu extends Component{
                   <CardTitle className="font-weight-bolder">{detail.name}</CardTitle>
                 </CardImgOverlay>
               </Card>
-            {/* </div> */}
+           
           </Col>
         );
       } else if (this.props.isTablet()){
