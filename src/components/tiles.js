@@ -15,7 +15,7 @@ class Menu extends Component{
     super(props);
     this.state = {
       selectedTile:null,
-      details:DETAILS
+      
       // open:false
     }
     // this.close=this.close.bind(this);

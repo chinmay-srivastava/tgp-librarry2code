@@ -32,16 +32,17 @@ class Main extends Component{
 
   render() {
     var content = [];
-    //To push the image to the next row automatically.
-    this.state.details.forEach((detail, i) =>{   //TypeError: Cannot read property 'forEach' of undefined
-      if((i+1) % 4 == 0){
+    var initial=0;
+      var end=initial+4; 
+    this.state.details.forEach((detail, i) =>{  
+      if(i % 4 == 0){
         content.push(
           <div className="row" key={detail.id}>       
-          <Tiles open={this.state.open} close={this.close} id={i}/>
+          <Tiles open={this.state.open} close={this.close} id={i} details={this.state.details.slice(initial,end)}/>
           </div>
         )
-      }else{
-          content.push(<article key={detail.id} className="col-md-3"></article>);
+        initial+=4;
+        end+=4;
       }
   });
 
